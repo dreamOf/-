@@ -1099,7 +1099,7 @@ export JAVA_HOME PATH
 
 #### 3）oracle
 
-参照博客：https://blog.csdn.net/qq_22260641/article/details/76182447
+参照博客：https://blog.csdn.net/qq_22260641/article/details/76182447。
 
 
 
