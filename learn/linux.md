@@ -1097,9 +1097,41 @@ export JAVA_HOME PATH
 #3.开放端口ORACLE
 ```
 
-#### 3）oracle
+#### 3）ORACLE
 
 参照博客：https://blog.csdn.net/qq_22260641/article/details/76182447。
+
+问题1：/etc/security/limits.conf文件**再增加**oracle soft stack 10240。
+
+问题2：net configuration assitant 启动/安装失败。
+
+ 解决：
+
+```shell
+# 1.修改或者增加信息
+vim /etc/sysconfig/network
+# NETWORKING=yes
+# HOSTNAME=orcl
+# 2.修改/etc/hosts,注意orcl的位置
+vim /etc/hosts
+#127.0.0.1   localhost localhost.localdomain localhost4 orcl localhost4.localdomain4
+#::1         localhost localhost.localdomain localhost6 orcl localhost6.localdomain
+# 3.hostname orcl
+
+```
+
+安装完成后用管理员身份登录oracle，然后启动oracle.然后启动监听。
+
+附：oracle命令
+
+| 命令            | 描述     |      |
+| --------------- | -------- | ---- |
+| netca           | 配置监听 |      |
+| lstnrctl start  | 启动监听 |      |
+| lstnrctl status | 监听状态 |      |
+| lstnrctl stop   | 停止监听 |      |
+
+
 
 
 
