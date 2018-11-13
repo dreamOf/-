@@ -1131,6 +1131,57 @@ vim /etc/hosts
 | lstnrctl status | 监听状态 |      |
 | lstnrctl stop   | 停止监听 |      |
 
+### 十五、shell编程
+
+#### 1）定义
+
+​    以.sh为后缀的文件，叫做shell脚本文件。在shell文件里编写的命令叫做shell.
+
+​    shell的种类有很多，每种shell在文件的的标识不同。linux shell用#!/bin/bash在shell文件的第一行进行标识。
+
+```shell
+#!/bin/bash
+echo "hello word!"
+```
+
+通常通过***./文件名.sh***运行。为什么不是***文件名.sh***，因为直接写文件名.sh，linux回去path里去找**文件名.sh**，而只有/bin、/sbin、/usr/bin、/usr/sbin在path里，你的当前目录通常不在path里，所以会找不到命令。
+
+用**./文件名.sh**运行,系统就会去当前目录下找。
+
+```shell
+/bin/sh echosh.sh 
+/bin/php echost.php
+./echosh.sh
+```
+
+#### 2）变量
+
+分为系统变量和用户变量。
+
+```
+echo $PATH
+echo $USER
+```
+
+
+
+定义变量：变名=值
+
+撤销变量：unset 变量
+
+声明静态变量:readonly 变量 ，不能unset
+
+快速入门：
+
+```:book:
+1.定义变量A
+2.撤销变量A
+3.声明静态变量B，
+4.把变量升级为全局变量，可供其他shell程序使用
+```
+
+
+
 
 
 
