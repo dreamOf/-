@@ -60,6 +60,55 @@
 
 #### 四、方法引用
 
+**定义**：若Lamda体中的内容有方法已经实现了，我们可以使用"方法引用"，可以理解为方法引用是lamda表达式的另外一种表现形式。
+
+**语法格式**：
+
+方法引用：
+
+`1.对象::实例方法名`
+
+`2.类::静态方法名`
+
+`3.类::实例方法名`
+
+Example:
+
+```
+ //普通方式
+		Consumer<String> con = (x)->System.out.println(x);
+		con.accept("普通方式");
+//方法引用
+		Consumer<String> con2 = System.out::println;
+		con2.accept("方法引用");
+
+```
+
+注意：1.参数列表和返回值必须和接口函数一致.
+
+​           2.使用第三种的条件是：参数为两个，且第一个参数是方法的调用者，第二个参数是方法的参数，方可使用。
+
+构造器引用：
+
+ `语法：ClassName::new`
+
+```
+ Consumer<String> con = Employee:new;
+
+```
+
+注意：1.构造函数的参数列表和接口函数的参数列表一致.
+
+数组引用：
+
+`语法：`
+
+`1.type::new`
+
+```
+Function<int,String[]) fun = String[]:new;
+```
+
 **语法规则：**
 
 1. 静态方法引用：ClassName::method
@@ -79,4 +128,32 @@ Consumer<String> con = Employee::new;
 Function<Integer,String[]> fun = String[]::new;
 String[] apply = fun.apply(10);
 ```
+
+#### **五、Stream**
+
+1. 什么是流
+
+   是数据渠道，用于操作数据源（数组、集合等）所生成的元素序列。集合讲 的是数据，流讲的是计算。
+
+   注意：
+
+   - stream 自己不会存储元素。
+   - stream不会改变源对象。相反，它会返回一个持有结果的新Stream.
+   - stream是延迟执行的，意味着他们会等到需要结果的时候执行。
+
+2. Stream的操作三个步骤
+
+   - 创建Stream.
+
+     一个数据源，获取一个流。
+
+   - 中间操作
+
+     一个中间操作链，对数据源的数据进行处理。
+
+   - 终止操作
+
+     一个终止操作，执行中间操作连（filter,map等），并产生结果。
+
+3. 筛选与切片
 

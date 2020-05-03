@@ -1142,6 +1142,10 @@ vim /etc/hosts
 
 参考：https://blog.csdn.net/wudinaniya/article/details/81281016
 
+#### 5）mysql
+
+修改密码：ALTER USER 'root'@'localhost' IDENTIFIED BY '新密码';
+
 ### 十五、shell编程
 
 #### 1）shell定义
