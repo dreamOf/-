@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: cs-server-sm
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848

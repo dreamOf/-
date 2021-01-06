@@ -1,0 +1,30 @@
+server:
+ port: 8089
+spring:
+ application:
+   name: cs-server-gatway
+ cloud:
+   nacos:
+     discovery:
+       server-addr: localhost:8848
+   gateway:
+     enabled: true
+     discovery:
+       locator:
+         lower-case-service-id: true
+     routes:
+       - id: base
+         uri: lb://cs-server-base
+         predicates:
+           - Path=/em/**
+         filters:
+           - StripPrefix=1
+       - id: sm
+         uri: lb://cs-server-sm
+         predicates:
+           - Path=/sm/**
+         filters:
+           - StripPrefix=1
+logging:
+  level:
+    org.springframework:cloud.gateway: debug

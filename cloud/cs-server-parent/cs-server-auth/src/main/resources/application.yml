@@ -1,0 +1,10 @@
+server:
+ port: 8086
+spring:
+ application:
+   name: cs-server-auth
+ datasource:
+   url: jdbc:mysql://121.36.46.63:3306/cloud_cs?serverTimezone=Hongkong&useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+   username: root
+   password: csc123456
+   driver-class-name: com.mysql.cj.jdbc.Driver
